@@ -5,26 +5,26 @@ import factories.GUIFactory;
 import factories.MacOSFactory;
 import factories.WindowsFactory;
 
-public class Demo { // demo da aplicaÁ„o
-	private static Application configureApplication() { // mÈtodo privado e est·tico para configurar aplicaÁ„o
-		// declaraÁ„o de vari·veis de aplicaÁ„o e factory
+public class Demo { // demo da aplica√ß√£o
+	private static Application configureApplication() { // m√©todo privado e est√°tico para configurar aplica√ß√£o
+		// declara√ß√£o de vari√°veis de aplica√ß√£o e factory
 		Application app;
 		GUIFactory factory;
 		
 		String osName = System.getProperty("os.name").toLowerCase(); 
-		// pega as propriedades da string osName para verificar se os par‚metros correspondem ao argumento especificado
+		// pega as propriedades da string osName para verificar se os par√¢metros correspondem ao argumento especificado (vale ressaltar a formata√ß√£o para lowercase)
 		
 		if (osName.contains("mac")) { // se osName conter "mac"
 			factory = new MacOSFactory(); // cria factory de MacOS
-		} else { // se n„o conter
+		} else { // se n√£o conter
 			factory = new WindowsFactory(); // cria factory de Windows
 		}
-		app = new Application(factory); // criaÁ„o de aplicaÁ„o Factory dependendo do processo de if e else
-		return app; // retorna aplicaÁ„o
+		app = new Application(factory); // cria√ß√£o de aplica√ß√£o Factory dependendo do processo de if e else
+		return app; // retorna aplica√ß√£o
 		}
-	public static void main(String[] args) { // mÈtodo main
-		Application app = configureApplication(); // aplicaÁ„o chama mÈtodo configureApplication
-		app.paint(); // aplicativo executa mÈtodo paint
+	public static void main(String[] args) { // m√©todo main
+		Application app = configureApplication(); // aplica√ß√£o chama m√©todo configureApplication
+		app.paint(); // aplicativo executa m√©todo paint
 	}
 
 }
